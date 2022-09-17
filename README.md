@@ -50,7 +50,8 @@ iremos a colocar.
 Y ahora se complica un poco más: 
 
 Tendremos que modificar los métodos necesarios para que emilia y cacho puedan ir 
-agarrando empanadas de la caja, para llevarlas a su plato. Para simplificar las cosas,
-decimos que cada vez que quitan una empanada de la caja, se van retirando desde la
-última que se agregó.
+agarrando empanadas de la caja, para llevarlas a su plato. Al método, tendremos
+que pasarle como como argumento el gusto de la empanada que quiere agarrar, y 
+hacer un remove de la colección de la caja y hacer un add en la colección que
+representa el plato de la persona.
  
