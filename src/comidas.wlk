@@ -1,19 +1,23 @@
-object empanadaDeCarne {
-	method calorias() = 250
+import gustos.*
+
+class Empanada {
+	const property gusto
+	method calorias() = gusto.calorias()
 }
 
-object empanadaDeJamonYQueso {
-	method calorias() = 300
-}
 
-object empanadaDeHumita {
-	method calorias() = 300
-}
+
 
 object cajaDeEmpanadas {
 	const property contenido = new Set() // es lo mismo que #{}
 	
 	method meterEmpanadas(cantidad,gusto) {
-		// Lo vamos a usar cuando tengamos la clase
+		(1..cantidad).forEach({e=>contenido.add(new Empanada(gusto=gusto))})
+	}
+	
+	method hayDelGusto(unGusto) = contenido.any({e=>e.gusto() == unGusto})
+
+	method removerDelGusto(unGusto) {
+		contenido.remove(contenido.find({e=>e.gusto() == unGusto})) 
 	}
 }
